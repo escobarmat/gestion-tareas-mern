@@ -36,6 +36,11 @@ app.use('/api/auth', require('./routes/authRoute'));
 app.use('/api/project', require('./routes/projectRoute'));
 app.use('/api/task', require('./routes/taskRoute'));
 
+app.use((req, res) => {
+    res.sendFile(path.join(__dirname + '/public/index.html'));
+});
+
+
 //Base de datos 
 dbConnection();
 
